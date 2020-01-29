@@ -1,1 +1,7 @@
-{}
+{
+  "baseUrl": "https://www.amazon.de",
+  "viewportWidth": 1440,
+  "viewportHeight": 900,
+  "watchForFileChanges": false,
+  "integrationFolder": "cypress/e2e"
+}
