@@ -1,6 +1,6 @@
-export default class ConsultantProjectsPage {
+export default class CustomServicePage {
 
-    getProposedProjectName() {
+    getMyOrdersButton() {
         return '[alt="Meine Bestellungen"]';
     }
 }

@@ -18,7 +18,7 @@ describe('Amazon test example', () => {
         });
         context('when user clicks on `My orders` button', () => {
             before(() => {
-                cy.get(customServicePage.getProposedProjectName()).click();
+                cy.get(customServicePage.getMyOrdersButton()).click();
             });
             it('should navigates user to `Login` page and assert Email-Address input label', () => {
                 cy.get(loginPage.emailAddersInputTextLabel()).should('contain.text', 'E-Mail-Adresse');
