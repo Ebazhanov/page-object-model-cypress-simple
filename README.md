@@ -59,7 +59,7 @@ describe('Amazon test with POM improvements', () => {
     const desktop4 = new Desktop4();
 ```
 
-- third example with POM improvements [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/PomWithImprovments.js)
+- example with POM improvements [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/PomWithImprovments.js)
 ```javascript
 import {HomePage} from '../page-objects/HomePage'
 
