@@ -1,4 +1,4 @@
-describe('Amazon test example', () => {
+describe('Amazon test without POM', () => {
     before(() => {
         cy.visit('/')
     });

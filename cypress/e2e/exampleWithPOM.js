@@ -1,8 +1,8 @@
 import CustomServicePage from '../page-objects/CustomServicePage'
-import HomePage from '../page-objects/HomePage'
+import {HomePage} from '../page-objects/HomePage/HomePage'
 import LoginPage from '../page-objects/LoginPage'
 
-describe('Amazon test example', () => {
+describe('Amazon test with simple POM', () => {
 
     const customServicePage = new CustomServicePage();
     const homePage = new HomePage();

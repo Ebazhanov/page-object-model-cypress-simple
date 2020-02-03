@@ -1,18 +1,77 @@
-This is the simple example of 'Page Object Model'
-------------------------------------------------
-> I will create later on a little be more complicated, but please use this one like an example which you have to adapt for your simple tests
+Template of "Page object model" variation with Cypress
+---------------
 
-##### So in the Repo you will find two the same tests:
+### #1 This is the first example with simple abstraction
+> Really simple just abstract your selectors
+
+##### So here is the difference:
 - example **without** POM [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/exampleWithoutPOM.js)
-- and second one **with** POM [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/exampleWithPOM.js)
+```javascript
+    describe('given `Customer service` page', () => {
+        before(() => {
+            cy.visit('/gp/help/customer/display.html')
+        });
+        context('when user clicks on `My orders` button', () => {
+            before(() => {
+                cy.get('[alt="Meine Bestellungen"]').click();
+            });
+            it('should navigate user to `Login` page', () => {
+                cy.get('.a-form-label').should('contain.text', 'E-Mail-Adresse');
+            });
+        });
+    });
+```
+
+- second one **with** POM [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/exampleWithPOM.js)
+```javascript
+    describe('given `Customer service` page', () => {
+        before(() => {
+            cy.visit(homePage.navigateToCustomerServicePage())
+        });
+        context('when user clicks on `My orders` button', () => {
+            before(() => {
+                cy.get(customServicePage.getMyOrdersButton()).click();
+            });
+            it('should navigates user to `Login` page and assert Email-Address input label', () => {
+                cy.get(loginPage.emailAddersInputTextLabel()).should('contain.text', 'E-Mail-Adresse');
+            });
+        });
+    });
+```
 
 ##### The diagram shows us:
 - dependencies where we are keeping our locators/selectors
 <img src="https://monosnap.com/image/nw7GXXmrnoTxFqLOVrn6VKMuzMjUcC"/>
 
+### #2 The second example with improvements for complex pages and with lot of elements on it.
 
+- without POM improvements [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/PomWithoutImprovments.js)
+```javascript
+import {Desktop1} from '../page-objects/HomePage/Desktop1'
+import {Desktop2} from '../page-objects/HomePage/Desktop2'
+import {Desktop3} from '../page-objects/HomePage/Desktop3'
+import {Desktop4} from '../page-objects/HomePage/Desktop4'
 
-##### Benefit from this structure are: 
+describe('Amazon test with POM improvements', () => {
+    const desktop1 = new Desktop1();
+    const desktop2 = new Desktop2();
+    const desktop3 = new Desktop3();
+    const desktop4 = new Desktop4();
+```
+
+- third example with POM improvements [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/PomWithImprovments.js)
+```javascript
+import {HomePage} from '../page-objects/HomePage'
+
+describe('Amazon test with POM improvements', () => {
+    const homePage = new HomePage();
+    const desktop1 = homePage.getDesktop1();
+    const desktop2 = homePage.getDesktop2();
+    const desktop3 = homePage.getDesktop3();
+    const desktop4 = homePage.getDesktop4();
+```
+
+### General benefit from this structure is: 
 - Reusability of the same selectors/locator in different classes/tests
 - Clear and more readable architecture
 - Easy to fix failed **tests** by fixing locator/selector in one place
