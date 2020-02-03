@@ -53,10 +53,10 @@ import {Desktop3} from '../page-objects/HomePage/Desktop3'
 import {Desktop4} from '../page-objects/HomePage/Desktop4'
 
 describe('Amazon test with POM improvements', () => {
-    const desktop1 = new Desktop1();
-    const desktop2 = new Desktop2();
-    const desktop3 = new Desktop3();
-    const desktop4 = new Desktop4();
+    const section1 = new Desktop1();
+    const section2 = new Desktop2();
+    const section3 = new Desktop3();
+    const section4 = new Desktop4();
 ```
 
 - example with POM improvements [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/PomWithImprovments.js)
@@ -65,10 +65,10 @@ import {HomePage} from '../page-objects/HomePage'
 
 describe('Amazon test with POM improvements', () => {
     const homePage = new HomePage();
-    const desktop1 = homePage.getDesktop1();
-    const desktop2 = homePage.getDesktop2();
-    const desktop3 = homePage.getDesktop3();
-    const desktop4 = homePage.getDesktop4();
+    const section1 = homePage.getDesktop1();
+    const section2 = homePage.getDesktop2();
+    const section3 = homePage.getDesktop3();
+    const section4 = homePage.getDesktop4();
 ```
 
 ### General benefit from this structure is: 
