@@ -44,7 +44,7 @@ Template of "Page object model" variation with Cypress
 <img src="https://monosnap.com/image/nw7GXXmrnoTxFqLOVrn6VKMuzMjUcC"/>
 
 ### #2 The second example with improvements for complex pages and with lot of elements on it.
-
+![amazon home page section](amazonExample.gif)
 - without POM improvements [here](https://github.com/Ebazhanov/page-object-model-cypress-simple/blob/master/cypress/e2e/PomWithoutImprovments.js)
 ```javascript
 import {Desktop1} from '../page-objects/HomePage/Desktop1'
