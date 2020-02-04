@@ -14,16 +14,16 @@ describe('Amazon test with POM improvements', () => {
         before(() => {
             cy.visit('/')
         });
-        it('should verify presence of Slider in Desktop-1', () => {
+        it('should verify presence of Slider in Section-1', () => {
             cy.get(section1.getSlider()).should('be.exist');
         });
-        it('should verify presence of Slider in Desktop-2', () => {
+        it('should verify presence of Slider in Section-2', () => {
             cy.get(section2.getSlider()).should('be.exist');
         });
-        it('should verify presence of Slider in Desktop-3', () => {
+        it('should verify presence of Slider in Section-3', () => {
             cy.get(section3.getSlider()).should('be.exist');
         });
-        it('should verify presence of Slider in Desktop-4', () => {
+        it('should verify presence of Slider in Section-4', () => {
             cy.get(section4.getSlider()).should('be.exist');
         });
     });
