@@ -1,4 +1,4 @@
-Template of "Page object model" variation with Cypress
+Learn "Page object model" with cypress in two simple steps
 ---------------
 
 ### #1 This is the first example with simple abstraction
